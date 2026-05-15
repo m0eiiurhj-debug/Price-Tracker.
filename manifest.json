@@ -1,0 +1,72 @@
+{
+    "name": "Price Tracker - متتبع الأسعار",
+    "short_name": "Price Tracker",
+    "description": "متتبع الأسعار - تابع أسعار الذهب والعملات والبورصة والبترول لحظة بلحظة",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#1a1a2e",
+    "theme_color": "#667eea",
+    "orientation": "portrait",
+    "scope": "/",
+    "dir": "rtl",
+    "lang": "ar-EG",
+    "icons": [
+        {
+            "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'><rect fill='%231a1a2e' width='192' height='192'/><text x='50%' y='50%' font-size='80' text-anchor='middle' dominant-baseline='middle'>📊</text></svg>",
+            "sizes": "192x192",
+            "type": "image/svg+xml",
+            "purpose": "any"
+        },
+        {
+            "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><rect fill='%231a1a2e' width='512' height='512'/><text x='50%' y='50%' font-size='300' text-anchor='middle' dominant-baseline='middle'>📊</text></svg>",
+            "sizes": "512x512",
+            "type": "image/svg+xml",
+            "purpose": "any"
+        }
+    ],
+    "screenshots": [
+        {
+            "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 540 720'><rect fill='%231a1a2e' width='540' height='720'/><text x='50%' y='50%' font-size='200' text-anchor='middle' dominant-baseline='middle'>📊</text></svg>",
+            "sizes": "540x720",
+            "type": "image/svg+xml",
+            "form_factor": "narrow"
+        }
+    ],
+    "categories": ["finance", "utilities"],
+    "shortcuts": [
+        {
+            "name": "الذهب",
+            "short_name": "الذهب",
+            "description": "عرض سعر الذهب",
+            "url": "/?detail=gold",
+            "icons": [
+                {
+                    "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'><text x='50%' y='50%' font-size='120' text-anchor='middle' dominant-baseline='middle'>🪙</text></svg>",
+                    "sizes": "192x192"
+                }
+            ]
+        },
+        {
+            "name": "الدولار",
+            "short_name": "الدولار",
+            "description": "عرض سعر الدولار",
+            "url": "/?detail=usd",
+            "icons": [
+                {
+                    "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'><text x='50%' y='50%' font-size='120' text-anchor='middle' dominant-baseline='middle'>💵</text></svg>",
+                    "sizes": "192x192"
+                }
+            ]
+        }
+    ],
+    "share_target": {
+        "action": "/share",
+        "method": "POST",
+        "enctype": "application/x-www-form-urlencoded",
+        "params": {
+            "title": "title",
+            "text": "text",
+            "url": "url"
+        }
+    }
+}
