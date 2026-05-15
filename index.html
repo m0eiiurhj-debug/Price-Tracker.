@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Price Tracker - متتبع الأسعار</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- الهيدر -->
+        <div class="header">
+            <h1>📊 Price Tracker</h1>
+            <p>متتبع الأسعار - لحظة بلحظة</p>
+            <div class="last-update" id="lastUpdate">جاري التحميل...</div>
+        </div>
+
+        <!-- قائمة الأسعار الرئيسية -->
+        <div class="prices-grid" id="pricesGrid">
+            <!-- الذهب -->
+            <div class="price-card" onclick="showDetails('gold')">
+                <div class="card-icon">🪙</div>
+                <div class="card-title">الذهب</div>
+                <div class="card-price" id="goldPrice">---</div>
+                <div class="card-change" id="goldChange"></div>
+            </div>
+
+            <!-- الدولار -->
+            <div class="price-card" onclick="showDetails('usd')">
+                <div class="card-icon">💵</div>
+                <div class="card-title">الدولار</div>
+                <div class="card-price" id="usdPrice">---</div>
+                <div class="card-change" id="usdChange"></div>
+            </div>
+
+            <!-- اليورو -->
+            <div class="price-card" onclick="showDetails('eur')">
+                <div class="card-icon">🇪🇺</div>
+                <div class="card-title">اليورو</div>
+                <div class="card-price" id="eurPrice">---</div>
+                <div class="card-change" id="eurChange"></div>
+            </div>
+
+            <!-- الريال السعودي -->
+            <div class="price-card" onclick="showDetails('sar')">
+                <div class="card-icon">🇸🇦</div>
+                <div class="card-title">الريال السعودي</div>
+                <div class="card-price" id="sarPrice">---</div>
+                <div class="card-change" id="sarChange"></div>
+            </div>
+
+            <!-- البورصة -->
+            <div class="price-card" onclick="showDetails('stock')">
+                <div class="card-icon">📈</div>
+                <div class="card-title">البورصة (EGX30)</div>
+                <div class="card-price" id="stockPrice">---</div>
+                <div class="card-change" id="stockChange"></div>
+            </div>
+
+            <!-- البترول -->
+            <div class="price-card" onclick="showDetails('oil')">
+                <div class="card-icon">🛢️</div>
+                <div class="card-title">البترول (برنت)</div>
+                <div class="card-price" id="oilPrice">---</div>
+                <div class="card-change" id="oilChange"></div>
+            </div>
+        </div>
+
+        <!-- زر تحديث الكل -->
+        <button class="refresh-btn" onclick="refreshAllPrices()">
+            🔄 تحديث الكل
+        </button>
+
+        <!-- منطقة التفاصيل (اللي هتظهر عند الضغط على أي بطاقة) -->
+        <div class="details-modal" id="detailsModal" style="display: none;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="modal-icon" id="modalIcon">🪙</span>
+                    <span class="modal-title" id="modalTitle">الذهب</span>
+                    <button class="close-btn" onclick="closeModal()">✕</button>
+                </div>
+                <div class="modal-body">
+                    <div class="detail-price" id="modalPrice">---</div>
+                    <div class="detail-change" id="modalChange"></div>
+                    <div class="detail-time" id="modalTime"></div>
+                    
+                    <!-- عيارات الذهب (تظهر بس لو اختار gold) -->
+                    <div id="goldCarats" style="display: none;">
+                        <div class="carat-item">عيار 24: <span id="carat24">---</span> جم</div>
+                        <div class="carat-item">عيار 22: <span id="carat22">---</span> جم</div>
+                        <div class="carat-item">عيار 21: <span id="carat21">---</span> جم</div>
+                        <div class="carat-item">عيار 18: <span id="carat18">---</span> جم</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
