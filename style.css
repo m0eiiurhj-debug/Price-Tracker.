@@ -1,0 +1,212 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Cairo', 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    min-height: 100vh;
+    padding: 16px;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.header h1 {
+    font-size: 28px;
+    background: linear-gradient(135deg, #f0c27b, #d4af37);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.header p {
+    color: rgba(255,255,255,0.6);
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.last-update {
+    font-size: 11px;
+    color: rgba(255,255,255,0.4);
+    margin-top: 8px;
+}
+
+.prices-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.price-card {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px);
+    border-radius: 24px;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.price-card:active {
+    transform: scale(0.97);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.card-icon {
+    font-size: 40px;
+    margin-bottom: 8px;
+}
+
+.card-title {
+    color: rgba(255,255,255,0.8);
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.card-price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #f0c27b;
+}
+
+.card-change {
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.card-change.up {
+    color: #4caf50;
+}
+.card-change.down {
+    color: #f44336;
+}
+
+.refresh-btn {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border: none;
+    border-radius: 60px;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.refresh-btn:active {
+    transform: scale(0.98);
+}
+
+/* Modal التفاصيل */
+.details-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.9);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.modal-content {
+    background: linear-gradient(135deg, #1e1e2e, #2a2a3e);
+    border-radius: 32px;
+    width: 100%;
+    max-width: 400px;
+    overflow: hidden;
+}
+
+.modal-header {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background: rgba(0,0,0,0.3);
+}
+
+.modal-icon {
+    font-size: 32px;
+    margin-right: 12px;
+}
+
+.modal-title {
+    flex: 1;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+}
+
+.close-btn {
+    background: rgba(255,255,255,0.2);
+    border: none;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.modal-body {
+    padding: 24px;
+    text-align: center;
+}
+
+.detail-price {
+    font-size: 40px;
+    font-weight: bold;
+    color: #f0c27b;
+    margin-bottom: 12px;
+}
+
+.detail-change {
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.detail-time {
+    font-size: 11px;
+    color: rgba(255,255,255,0.4);
+    margin-bottom: 20px;
+}
+
+.carat-item {
+    background: rgba(255,255,255,0.05);
+    padding: 10px;
+    border-radius: 12px;
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+@media (max-width: 480px) {
+    .prices-grid {
+        gap: 12px;
+    }
+    .price-card {
+        padding: 14px;
+    }
+    .card-icon {
+        font-size: 32px;
+    }
+}
